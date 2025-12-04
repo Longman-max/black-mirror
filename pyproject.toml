@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "black_mirror"
+version = "0.1.0"
+description = "Weapons-grade cool OSINT toolkit"
+authors = [
+  { name="Black Mirror Team", email="team@blackmirror.local" },
+]
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests",
+    "click",
+]
+
+[project.scripts]
+black-mirror = "black_mirror.__main__:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v"
